@@ -285,8 +285,9 @@ FROM hechos_ventas hv
 JOIN dim_canal_adquisicion dca ON hv.id_canal = dca.id
 GROUP BY dca.nombre_canal, dca.tipo_canal, dca.costo_adquisicion
 ORDER BY SUM(hv.total_neto) DESC;
-
-
+```
+![ejemplo4](ejemplo4.png)
+```sql
 -- Ventas por mes y categoría
 SELECT 
     dt.nombre_mes,
@@ -298,7 +299,7 @@ JOIN dim_producto dp ON hv.id_producto = dp.id
 GROUP BY dt.mes, dt.nombre_mes, dp.categoria
 ORDER BY dt.mes, ventas DESC;
 ```
-
+![ejemplo5](ejemplo5.png)
 ---
 
 ## ✅ Resumen
